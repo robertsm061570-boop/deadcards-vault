@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Dead Cards Vault</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #222;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #ff4444;
+    }
+
+    .terms {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .checkbox input {
+      margin-right: 10px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #ff4444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+
+    .btn:disabled {
+      background-color: #555;
+      cursor: not-allowed;
+    }
+
+    .gallery {
+      display: none;
+      margin-top: 30px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #333;
+      border: 2px solid #ff4444;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .card-title {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="terms-container">
+    <h1>Welcome to The Dead Cards Vault</h1>
+    <div class="terms">
+      <p>By entering this vault, you agree to the following:</p>
+      <ul>
+        <li>You will not reproduce or distribute any card imagery without permission.</li>
+        <li>You acknowledge that all content is protected under lore-based licensing.</li>
+        <li>You accept the terms of digital engagement and community conduct.</li>
+      </ul>
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" id="agree" />
+      <label for="agree">I accept the terms and conditions</label>
+    </div>
+    <button class="btn" id="enter-btn" disabled>Enter Gallery</button>
+  </div>
+
+  <div class="container gallery" id="gallery-container">
+    <h2>The Dead Cards Digital Card Gallery</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://sandbox.weebly.com/uploads/b/f2d81fce9b84d6b4feb15bfb2b3f81b33c795b40baa08ccf0d9f2fbaedc03490/TWDUNIV_Gabriel_1756353540.JPG?width=2400&optimize=medium" alt="Card 1" />
+        <div class="card-title">Gabriel</div>
+      </div>
+      <div class="card">
+        <img src="https://yourweeblysite.weebly.com/uploads/card2.jpg" alt="Card 2" />
+        <div class="card-title">The Hollow Sheriff</div>
+      </div>
+      <div class="card">
+        <img src="https://yourweeblysite.weebly.com/uploads/card3.jpg" alt="Card 3" />
+        <div class="card-title">Bloodbound Oracle</div>
+      </div>
+      <!-- Add more cards as needed -->
+    </div>
+  </div>
+
+  <script>
+    const checkbox = document.getElementById('agree');
+    const enterBtn = document.getElementById('enter-btn');
+    const termsContainer = document.getElementById('terms-container');
+    const galleryContainer = document.getElementById('gallery-container');
+
+    checkbox.addEventListener('change', () => {
+      enterBtn.disabled = !checkbox.checked;
+    });
+
+    enterBtn.addEventListener('click', () => {
+      termsContainer.style.display = 'none';
+      galleryContainer.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
